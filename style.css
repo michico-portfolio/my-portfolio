@@ -804,3 +804,113 @@ footer small {
     margin-top: 0;
     line-height: 1; /* 行の高さを最小限に */
 }
+
+/* =========================================
+   About：プロフィール紹介・ラベル
+   ========================================= */
+
+.profile_intro {
+    text-align: center;
+    margin: 1.5rem auto 3rem;
+    max-width: 760px;
+}
+
+.profile_intro h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #535152;
+    letter-spacing: .08rem;
+}
+
+.profile_role {
+    margin-top: .5rem !important;
+    color: #cc9ab9;
+    font-size: .95rem;
+    letter-spacing: .12rem;
+}
+
+.profile_message {
+    margin: 1.3rem auto 0 !important;
+    line-height: 2 !important;
+    color: #666;
+}
+
+.about_label {
+    display: block;
+    margin-bottom: .7rem;
+    color: #cc9ab9;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .12rem;
+    text-align: left;
+}
+
+/* =========================================
+   Works：実務制作／学校制作の見出し
+   ========================================= */
+
+.works_category {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.works_category:first-of-type {
+    margin-top: 3rem;
+}
+
+.works_category h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0 .8rem .5rem;
+    color: #cc9ab9;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .08rem;
+    border-bottom: 1px solid #cc9ab9;
+}
+
+.works_category_note {
+    margin-top: .7rem !important;
+    color: #777;
+    font-size: .9rem;
+    text-align: center;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+    .profile_intro {
+        margin: 1rem auto 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .profile_intro h3 {
+        font-size: 1.5rem;
+    }
+
+    .profile_role {
+        font-size: .8rem;
+    }
+
+    .profile_message {
+        font-size: .95rem;
+    }
+
+    .works_category {
+        margin-top: 4rem;
+    }
+
+    .works_category h3 {
+        font-size: 1.3rem;
+    }
+
+    .works_category_note {
+        font-size: .85rem;
+        padding: 0 1rem;
+    }
+
+    .about_label {
+        font-size: .8rem;
+    }
+}
+
