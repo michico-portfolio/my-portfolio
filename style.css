@@ -1,0 +1,806 @@
+@charset "UTF-8";
+
+/* マージンとフォントの設定 */
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+/* リンク設定 */
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+a:hover {
+  opacity: .7;
+}
+
+/* 基本設定 */
+html,
+body {
+  height: 100%;
+  background-color: rgb(249, 241, 249);
+}
+
+header,
+footer,
+main {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* ヘッダー */
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header li a {
+  font-size: 1.4rem;
+  letter-spacing: .1rem;
+  margin-left: 2rem;
+}
+
+header .container {
+  display: flex;
+  align-items: flex-end;
+  height: 80px;
+  padding-bottom: 0.5rem;
+}
+
+header nav {
+  margin-left: auto;
+  line-height: 1;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+header h1 a {
+  display: flex;
+  align-items: center;
+}
+
+header h1 img {
+  margin-right: 1rem;
+}
+
+/* ヒーローイメージ */
+section.hero_image {
+  width: 100%;
+  height: 576px;
+}
+
+section.hero_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* コンテンツ共通 */
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #cc9ab9;
+}
+
+section h3 {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+section h4 {
+  margin-top: 4rem;
+  color: #cc9ab9;
+  border-bottom: 1px solid #cc9ab9;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+section p {
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+div.contents {
+  margin-top: 2rem;
+}
+
+section:nth-child(n + 2) {
+  margin: 8rem auto 0;
+}
+
+/* About */
+div.abt_box {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+div.abt_box > div {
+  flex: 1;
+}
+
+div.abt_box img {
+  max-width: 100%;
+  width: 320px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+section#about h4 {
+  margin-top: 0;
+}
+
+/* 2つ目のQ&Aボックスのみ左右反転 */
+div.abt_box:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  div.abt_box,
+  div.abt_box:nth-of-type(even) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  div.abt_box img {
+    width: 100%;
+  }
+}
+
+/* Skills */
+.skill_item {
+  margin-top: 3rem;
+}
+
+.skill_item:first-child {
+  margin-top: 1.5rem;
+}
+
+/* 作品ギャラリー */
+div.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+div.item {
+  width: 320px;
+  height: auto;
+}
+
+div.photo_area {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+div.photo_area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+div.photo_area a:hover img {
+  transform: scale(1.05);
+}
+
+div.text_area p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* フッター */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 0 1rem;
+  margin-top: 8rem;
+}
+/* ページトップへ戻るボタン */
+
+#back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #cc9ab9;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#back-to-top svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+#back-to-top.opacity-100 {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#back-to-top.opacity-0 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#back-to-top.pointer-events-none {
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* スマホメニュー */
+
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+.mobile-menu-panel {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  display: block;
+  width: min(80vw, 280px);
+  background: #f5f5f5;
+  z-index: 950;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: opacity 1s ease, visibility 1s ease, transform 0.5s ease;
+}
+
+.mobile-menu-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.mobile-menu-panel ul {
+  display: block;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-top: 1px solid #e5e7eb;
+  list-style: none;
+}
+
+.mobile-menu-panel.hidden {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+
+.mobile-menu-panel li:nth-child(n + 2) {
+  margin-top: 1rem;
+}
+
+.mobile-menu-panel a {
+  display: block;
+  font-size: 1.4rem;
+  margin-left: 0;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+  z-index: 900;
+}
+
+.mobile-menu-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#mobile-menu-btn {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+#mobile-menu-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1100;
+  }
+
+  #mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .mobile-menu-panel {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    display: block;
+    width: min(80vw, 280px);
+    background: #f5f5f5;
+    z-index: 950;
+  }
+
+}
+/* Aboutセクションの領域基準設定 */
+#about {
+    position: relative !important;
+    overflow: hidden;
+}
+
+/* 背景ロゴのコンテナ */
+.logo-falling-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* About内のコンテンツをロゴより手前に表示 */
+#about .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 降ってくるロゴの設定（基準サイズをさらに約3倍の300pxへ拡大） */
+.falling-logo {
+    position: absolute;
+    top: -25%;
+    width: 300px;         /* さらに3倍（100px→300px）へ拡大 */
+    height: auto;
+    opacity: 0.12;        /* 超大型化に伴い、背景になじむ透け感（12%程度）に調整 */
+    animation: logoRain linear infinite;
+}
+
+/* ロゴの位置・サイズ差・ゆったりとした落下時間（20s〜35s）の設定 */
+.falling-logo:nth-child(1) { left: -2%;  animation-duration: 25s; animation-delay: 0s;  width: 280px; }
+.falling-logo:nth-child(2) { left: 15%;  animation-duration: 32s; animation-delay: 6s;  width: 230px; opacity: 0.08; }
+.falling-logo:nth-child(3) { left: 30%;  animation-duration: 22s; animation-delay: 2s;  width: 320px; }
+.falling-logo:nth-child(4) { left: 45%;  animation-duration: 35s; animation-delay: 10s; width: 350px; opacity: 0.1; }
+.falling-logo:nth-child(5) { left: 58%;  animation-duration: 28s; animation-delay: 3s;  width: 270px; }
+.falling-logo:nth-child(6) { left: 70%;  animation-duration: 33s; animation-delay: 8s;  width: 240px; opacity: 0.08; }
+.falling-logo:nth-child(7) { left: 82%;  animation-duration: 26s; animation-delay: 4s;  width: 310px; }
+.falling-logo:nth-child(8) { left: 92%;  animation-duration: 30s; animation-delay: 12s; width: 330px; opacity: 0.12; }
+
+/* ゆっくりとスッと降る動き */
+@keyframes logoRain {
+    0% {
+        top: -30%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.12;
+    }
+    90% {
+        opacity: 0.12;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+/* Aboutセクションの上下の余白（パディング）調整 */
+#about {
+    position: relative !important;
+    overflow: hidden;
+    padding-top: 10px !important;    /* 上の余白を約3分の1に短縮（元の設定に合わせて数値調整してください） */
+    padding-bottom: 60px;            /* 下の余白（必要に応じて調整） */
+}
+
+/* タイトル見出し（h2等）自体に大きな margin-top がついている場合の対策 */
+#about h2,
+#about .sec_title,
+#about .section-title {
+    margin-top: 0 !important;
+}
+/* Aboutセクション自体の上の余白を詰める */
+#about {
+    padding-top: 25px !important; /* 好みの高さ（15px〜30px程度）に調整可能 */
+}
+
+/* About内にある見出し・タイトル要素の上余白をすべてリセット */
+#about h2,
+#about h3,
+#about .sec_title,
+#about .section-title,
+#about .title,
+#about .abt_title,
+#about .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* Aboutセクション自体の上の余白を詰める */
+#about {
+    padding-top: 25px !important; /* 好みの高さ（15px〜30px程度）に調整可能 */
+}
+
+/* About内にある見出し・タイトル要素の上余白をすべてリセット */
+#about h2,
+#about h3,
+#about .sec_title,
+#about .section-title,
+#about .title,
+#about .abt_title,
+#about .container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* Aboutセクションとその直下の要素の「上余白」を強力に圧縮 */
+#about, 
+.about, 
+section.about, 
+#about .container, 
+.about .container,
+#about .abt_box,
+.about .abt_box {
+    padding-top: 20px !important;  /* 上の余白（必要に応じて 10px〜30px で調整） */
+    margin-top: 0 !important;
+}
+
+/* About内のタイトル（Aboutの文字）自体の余白リセット */
+#about h2, .about h2,
+#about h3, .about h3,
+#about .sec_title, .about .sec_title,
+#about .abt_title, .about .abt_title {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+/* フッターの背景色を濃い目のくすみピンクに変更 */
+footer,
+.footer,
+#footer {
+    background-color: #f5b0c3 !important; /* 濃い目のくすみピンク（ダスティローズ） */
+    color: #ffffff !important;            /* 文字色（白） */
+}
+/* ヘッダー全体（My Portfolio ＆ 右側メニュー）の文字色変更 */
+header a,
+.header a,
+header nav a,
+.nav_item a,
+header .logo,
+header h1 {
+    color: #535152 !important; /* 希望の文字色を指定（例：フッターとおそろいの濃いくすみピンク） */
+}
+
+/* ホバー時（マウスを乗せたとき）の色を変えたい場合 */
+header a:hover,
+.header a:hover {
+    color: #a67c85 !important; /* マウスを乗せたとき少し明るく */
+}
+/* Skillsセクション全体を基準位置に設定 */
+#skills {
+    position: relative;
+    overflow: hidden; /* 枠外にはみ出たお花を隠す */
+}
+
+/* 文字などが写真の下に隠れないように前面へ */
+#skills .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* お花全体の共通設定 */
+.flower-bg .flower {
+    position: absolute;
+    pointer-events: none; /* マウスイベントを無効化（下のテキスト選択やクリックを邪魔しない） */
+    opacity: 0.2;         /* うっすら表示（0.15〜0.3 程度で調整してください） */
+    z-index: 0;
+}
+
+/* 個別のお花のサイズ・位置設定 */
+/* 左上：大きめ */
+.flower-1 {
+    top: 5%;
+    left: -30px;
+    width: 140px;
+    transform: rotate(15deg);
+}
+
+/* 右上：小さめ */
+.flower-2 {
+    top: 15%;
+    right: 5%;
+    width: 70px;
+    transform: rotate(-20deg);
+    opacity: 0.15; /* 個別に透明度を変えることも可能 */
+}
+
+/* 左下：中くらい */
+.flower-3 {
+    bottom: 10%;
+    left: 8%;
+    width: 100px;
+    transform: rotate(45deg);
+}
+
+/* 右下：大きめ */
+.flower-4 {
+    bottom: -20px;
+    right: -20px;
+    width: 160px;
+    transform: rotate(-10deg);
+}
+/* Worksセクション全体の背景基準設定 */
+#works {
+    position: relative;
+    overflow: hidden; /* 枠外にはみ出たお花を隠す */
+}
+
+/* コンテンツが写真の下に隠れないように設定 */
+#works .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Works内のお花の位置・サイズ調整 */
+/* 左上 */
+.flower-w1 {
+    top: 3%;
+    left: 2%;
+    width: 120px;
+    transform: rotate(-15deg);
+}
+
+/* 右上 */
+.flower-w2 {
+    top: 10%;
+    right: -20px;
+    width: 150px;
+    transform: rotate(30deg);
+}
+
+/* 中央左寄り */
+.flower-w3 {
+    top: 55%;
+    left: -30px;
+    width: 160px;
+    transform: rotate(-35deg);
+}
+
+/* 右下 */
+.flower-w4 {
+    bottom: 5%;
+    right: 3%;
+    width: 110px;
+    transform: rotate(20deg);
+}
+/* --- セクション共通基準設定 --- */
+#skills, #works {
+    position: relative;
+    overflow: hidden;
+}
+
+#skills .container, #works .container {
+    position: relative;
+    z-index: 1;
+}
+
+.flower-bg .flower {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.18; /* うっすら感の調整（0.1〜0.3） */
+    z-index: 0;
+}
+
+/* --- Skills用（8個の位置指定） --- */
+.flower-s1 { top: 3%;  left: -20px; width: 130px; transform: rotate(15deg); }
+.flower-s2 { top: 12%; right: 4%;   width: 80px;  transform: rotate(-25deg); opacity: 0.12; }
+.flower-s3 { top: 30%; left: 6%;    width: 90px;  transform: rotate(40deg); }
+.flower-s4 { top: 48%; right: -30px;width: 150px; transform: rotate(-10deg); }
+.flower-s5 { top: 65%; left: -25px; width: 120px; transform: rotate(20deg); }
+.flower-s6 { top: 75%; right: 8%;   width: 75px;  transform: rotate(-45deg); opacity: 0.15; }
+.flower-s7 { bottom: 8%; left: 10%; width: 110px; transform: rotate(30deg); }
+.flower-s8 { bottom: -20px; right: 2%; width: 140px; transform: rotate(-15deg); }
+
+/* --- Works用（長さに合わせて全体に分散する8個の位置指定） --- */
+/* --- Works用（作品カードの外側に大きく配置） --- */
+.flower-w1 {
+    top: 1%;
+    left: -40px;          /* 左端からはみ出させる */
+    width: 160px;         /* 大きめに設定 */
+    transform: rotate(-15deg);
+    opacity: 0.25;        /* 見えやすく少し不透明度を上げる */
+}
+
+.flower-w2 {
+    top: 6%;
+    right: -50px;         /* 右端からはみ出させる */
+    width: 180px;
+    transform: rotate(30deg);
+    opacity: 0.25;
+}
+
+.flower-w3 {
+    top: 25%;
+    left: -70px;          /* 大きく左外へ */
+    width: 200px;
+    transform: rotate(-35deg);
+    opacity: 0.22;
+}
+
+.flower-w4 {
+    top: 40%;
+    right: -60px;         /* 大きく右外へ */
+    width: 170px;
+    transform: rotate(15deg);
+    opacity: 0.22;
+}
+
+.flower-w5 {
+    top: 58%;
+    left: -60px;
+    width: 180px;
+    transform: rotate(50deg);
+    opacity: 0.22;
+}
+
+.flower-w6 {
+    top: 72%;
+    right: -70px;
+    width: 210px;         /* 超大きめ */
+    transform: rotate(-20deg);
+    opacity: 0.25;
+}
+
+.flower-w7 {
+    top: 88%;
+    left: -50px;
+    width: 170px;
+    transform: rotate(10deg);
+    opacity: 0.22;
+}
+
+.flower-w8 {
+    bottom: -30px;
+    right: -40px;
+    width: 190px;
+    transform: rotate(-40deg);
+    opacity: 0.25;
+}
+/* フッターのスタイル調整 */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    /* 背景色などの設定が既存であれば調整不要です */
+}
+
+.footer-logo a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;                  /* ロゴ画像と文字の間隔 */
+    text-decoration: none;
+    color: inherit;             /* 文字色を継承 */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    height: 30px;               /* ロゴ画像の高さ（お好みで 25px 〜 40px で調整） */
+    width: auto;
+}
+/* フッター全体のスタイル */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* フッターロゴの調整 */
+.footer-logo {
+    margin-bottom: 2px;
+}
+
+.footer-logo a {
+    display: inline-block;
+}
+
+.footer-logo img {
+    height: 70px; /* 画像の高さ（好みに合わせて 30px〜50px で調整してください） */
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+/* 2026（smallタグ）の上の余白と行間を詰める */
+footer small {
+    display: block;
+    margin-top: 0;
+    line-height: 1; /* 行の高さを最小限に */
+}
