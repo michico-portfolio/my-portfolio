@@ -914,3 +914,133 @@ footer small {
     }
 }
 
+/* =========================================
+   About 調整版
+   ========================================= */
+
+/* プロフィール紹介を中央にまとめる */
+#about .profile_intro {
+    width: 100%;
+    max-width: 820px;
+    margin: 1.5rem auto 3.5rem !important;
+    text-align: center !important;
+}
+
+#about .profile_intro h3 {
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #535152;
+    letter-spacing: .08rem;
+}
+
+#about .profile_intro .profile_role {
+    margin: .6rem 0 0 !important;
+    text-align: center !important;
+    color: #cc9ab9;
+    font-size: .95rem;
+    letter-spacing: .1rem;
+}
+
+#about .profile_intro .profile_message {
+    margin: 1.2rem auto 0 !important;
+    text-align: center !important;
+    line-height: 2 !important;
+    color: #555;
+}
+
+/* Q&A見出し：英語ラベル→日本語タイトルの2段構成 */
+#about .abt_box h4 {
+    margin-top: 0;
+    padding-bottom: .6rem;
+}
+
+#about .about_label {
+    display: block !important;
+    margin: 0 0 .25rem !important;
+    color: #cc9ab9;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+#about .about_title {
+    display: block;
+    color: #cc9ab9;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Worksのカテゴリー見出し */
+#works .works_category {
+    margin: 5rem auto 0;
+    text-align: center;
+}
+
+#works .works_category:first-of-type {
+    margin-top: 3rem;
+}
+
+#works .works_category h3 {
+    display: inline-block;
+    margin: 0 !important;
+    padding: 0 .8rem .5rem;
+    color: #cc9ab9;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .08rem;
+    border-bottom: 1px solid #cc9ab9;
+}
+
+#works .works_category_note {
+    margin: .7rem 0 0 !important;
+    color: #777;
+    font-size: .9rem;
+    text-align: center;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+    #about .profile_intro {
+        margin: 1rem auto 2.5rem !important;
+        padding: 0 1rem;
+    }
+
+    #about .profile_intro h3 {
+        font-size: 1.5rem;
+    }
+
+    #about .profile_intro .profile_role {
+        font-size: .8rem;
+    }
+
+    #about .profile_intro .profile_message {
+        font-size: .95rem;
+    }
+
+    #about .about_label {
+        font-size: .78rem;
+    }
+
+    #about .about_title {
+        font-size: 1.1rem;
+    }
+
+    #works .works_category {
+        margin-top: 4rem;
+    }
+
+    #works .works_category h3 {
+        font-size: 1.3rem;
+    }
+
+    #works .works_category_note {
+        font-size: .85rem;
+        padding: 0 1rem;
+    }
+}
+
