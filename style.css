@@ -1044,3 +1044,129 @@ footer small {
     }
 }
 
+/* =========================================
+   Portfolio Clean Version
+   装飾を抑え、作品を主役にする
+   ========================================= */
+
+/* About */
+#about .profile_intro {
+    max-width: 760px;
+    margin: 2rem auto 3.5rem !important;
+    text-align: center !important;
+}
+
+#about .profile_intro h3 {
+    margin: 0 !important;
+    color: #535152;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .06rem;
+    text-align: center !important;
+}
+
+#about .profile_role {
+    margin: .5rem 0 0 !important;
+    color: #a67c85;
+    font-size: .9rem;
+    letter-spacing: .08rem;
+    text-align: center !important;
+}
+
+#about .profile_message {
+    margin: 1.2rem auto 0 !important;
+    max-width: 700px;
+    color: #555;
+    line-height: 2 !important;
+    text-align: center !important;
+}
+
+/* Aboutの見出しをシンプルに */
+#about .abt_box h4 {
+    margin-top: 0 !important;
+    padding-bottom: .55rem;
+    color: #a67c85;
+    border-bottom: 1px solid #d8b5c3;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* 背景装飾を使わない */
+#about .logo-falling-container,
+#skills .flower-bg,
+#works .flower-bg {
+    display: none !important;
+}
+
+/* Skills */
+#skills .skill_item {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#skills .skill_item h4 {
+    color: #a67c85;
+    border-bottom-color: #d8b5c3;
+}
+
+/* Works */
+#works .works_category {
+    margin: 4rem 0 0 !important;
+    text-align: left;
+}
+
+#works .works_category h3 {
+    display: block;
+    margin: 0 !important;
+    padding: 0 0 .6rem;
+    color: #a67c85;
+    border-bottom: 1px solid #d8b5c3;
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: .04rem;
+    text-align: left;
+}
+
+#works .works_category_note {
+    margin: .6rem 0 0 !important;
+    color: #777;
+    font-size: .9rem;
+    text-align: left;
+}
+
+#works .gallery {
+    margin-top: 2.5rem;
+}
+
+/* 作品タイトル */
+#works .text_area p {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+    #about .profile_intro {
+        margin: 1rem auto 2.5rem !important;
+        padding: 0 1rem;
+    }
+
+    #about .profile_intro h3 {
+        font-size: 1.5rem;
+    }
+
+    #about .profile_message {
+        font-size: .95rem;
+    }
+
+    #works .works_category {
+        margin-top: 3rem !important;
+    }
+
+    #works .works_category h3 {
+        font-size: 1.2rem;
+    }
+}
+
