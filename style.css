@@ -796,3 +796,139 @@ footer small{
         height:48px;
     }
 }
+
+/* =========================================
+   Works：画像サイズ修正版
+   ※比率を無理に4:3へ統一して切り抜かない
+   ========================================= */
+
+#works .photo_area {
+    background:#f1ecef;
+}
+
+/* 実務映像 */
+#works .video_gallery .photo_area {
+    aspect-ratio:4 / 3;
+}
+
+#works .video_gallery .photo_area img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+}
+
+/* 学校制作：Instagram（縦長） */
+#works .school_gallery .item:nth-child(-n+3) .photo_area {
+    aspect-ratio:4 / 5;
+}
+
+#works .school_gallery .item:nth-child(-n+3) .photo_area img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* 学校制作：動画配信バナー（横長） */
+#works .school_gallery .item:nth-child(n+4):nth-child(-n+6) .photo_area {
+    aspect-ratio:16 / 9;
+}
+
+#works .school_gallery .item:nth-child(n+4):nth-child(-n+6) .photo_area img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* 学校制作：名刺 */
+#works .school_gallery .item:nth-child(n+7) .photo_area {
+    aspect-ratio:3 / 2;
+}
+
+#works .school_gallery .item:nth-child(n+7) .photo_area img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+/* 画像が拡大・切り抜きされないようにする */
+#works .photo_area a {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+}
+
+#works .item:hover .photo_area img {
+    transform:none;
+}
+
+/* スマホ */
+@media (max-width:900px) {
+    #works .video_gallery .photo_area {
+        aspect-ratio:4 / 3;
+    }
+}
+
+@media (max-width:560px) {
+    #works .school_gallery .item:nth-child(-n+3) .photo_area {
+        aspect-ratio:4 / 5;
+    }
+
+    #works .school_gallery .item:nth-child(n+4):nth-child(-n+6) .photo_area {
+        aspect-ratio:16 / 9;
+    }
+
+    #works .school_gallery .item:nth-child(n+7) .photo_area {
+        aspect-ratio:3 / 2;
+    }
+}
+
+/* =========================================
+   About：画像サイズ調整
+   ========================================= */
+
+/* Aboutの画像を小さめにして、文章側に十分な幅を確保 */
+#about .abt_box {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 64px;
+}
+
+/* 左右反転する2段目も同じ画像サイズ */
+#about .abt_box:nth-of-type(even) {
+    grid-template-columns: minmax(0, 1fr) 320px;
+}
+
+/* About画像は固定幅にして大きくなりすぎないようにする */
+#about .abt_box img {
+    width: 320px;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    justify-self: center;
+}
+
+/* 画像側の文章との間隔を少し確保 */
+#about .abt_box > div {
+    min-width: 0;
+}
+
+#about .abt_box p {
+    max-width: none;
+}
+
+/* スマホでは1列に戻して画像を画面幅に合わせる */
+@media (max-width: 900px) {
+    #about .abt_box,
+    #about .abt_box:nth-of-type(even) {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    #about .abt_box img {
+        width: min(320px, 100%);
+        justify-self: center;
+    }
+}
+
